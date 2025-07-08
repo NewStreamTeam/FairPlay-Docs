@@ -1,5 +1,5 @@
 # FairPlay-Docs
-[Website](https://newstreamteam.github.io/fairplay-docs)
+[Website](https://NewStreamTeam.github.io/FairPlay-Docs)
 
 # Testing
 ```
