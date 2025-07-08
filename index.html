@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>FairPlay Docs</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">FairPlay Docs</a>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#fairplay-for-developers-contribution-guide" class="nav-link">FairPlay for Developers - Contribution Guide</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#introduction-and-project-philosophy" class="nav-link">Introduction and Project Philosophy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#development-setup" class="nav-link">Development (Setup)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#contributions-non-developers" class="nav-link">Contributions (Non-Developers)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#code-of-conduct" class="nav-link">Code of Conduct</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#useful-resources" class="nav-link">Useful Resources</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#project-license" class="nav-link">Project License</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="fairplay-for-developers-contribution-guide">FairPlay for Developers - Contribution Guide</h1>
+<h2 id="introduction-and-project-philosophy">Introduction and Project Philosophy</h2>
+<p>Welcome! We are delighted by your interest in contributing to our mission to redefine streaming. FairPlay is a 100% free, ad-free platform dedicated to relevant and entertaining content. Our philosophy is rooted in openness, transparency, and community collaboration. By joining our contributors, you're not just coding; you're participating in a movement for a fairer, richer web.</p>
+<p>Whether you're an experienced developer, translator, designer, or simply passionate about our cause, your contribution is valuable. Together, we are building a space where quality and ethics come first.</p>
+<h2 id="development-setup">Development (Setup)</h2>
+<p>This section is for developers wishing to contribute directly to FairPlay's code. Follow these steps to set up your environment and understand our processes.</p>
+<h3 id="development-environment">Development Environment</h3>
+<p>To get started, make sure you have the following prerequisites installed:</p>
+<ul>
+<li>Node.js (LTS version recommended)</li>
+<li>npm or yarn</li>
+<li>Git</li>
+</ul>
+<p>Clone our main GitHub repository:</p>
+<pre><code class="language-bash">git clone https://github.com/NewStreamTeam/NewStream-Website.git
+cd NewStream-Website
+</code></pre>
+<p>Install Next.js project dependencies:</p>
+<pre><code class="language-bash">npm install
+# or
+yarn install
+</code></pre>
+<p>Configure your environment variables by creating a <code>.env.local</code> file at the root of the project. You will need your Supabase keys (available on your Supabase dashboard):</p>
+<pre><code>NEXT_PUBLIC_SUPABASE_URL=YOUR_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+</code></pre>
+<p>To run the project locally, execute:</p>
+<pre><code class="language-bash">npm run dev
+# or
+yarn dev
+</code></pre>
+<p>The application will be accessible at <code>http://localhost:3000</code>.</p>
+<h3 id="code-structure">Code Structure</h3>
+<p>The FairPlay project is a <strong>Next.js</strong> application in <strong>TypeScript</strong>, using <strong>Supabase</strong> for the database and <strong>Tailwind CSS</strong> for styling. Here is the file and folder organization:</p>
+<pre><code>/   # Project Root
+├── README.md
+├── package.json            # Dependencies and NPM scripts
+├── next.config.ts          # Next.js configuration
+├── tailwind.config.js      # Tailwind CSS customization
+├── tsconfig.json           # TypeScript options
+├── public/                 # Static files (icons, images…)
+├── lib/
+│   └── supabase.ts         # Supabase client initialization (server-side)
+└── src/
+    ├── app/                # Next.js “app” folder
+    │   ├── globals.css     # Global styles
+    │   ├── layout.tsx      # Root layout
+    │   └── page.tsx        # Homepage
+    ├── components/         # Reusable React components
+    │   ├── Layout.tsx
+    │   ├── UploadModal.tsx
+    │   ├── UserMenu.tsx
+    │   └── icons.tsx
+    ├── lib/                # Application-side utilities
+    │   ├── supabase.ts     # Supabase client for the frontend
+    │   ├── publicApi.ts    # API key verification and rate-limiting
+    │   ├── recommend.ts    # Video recommendation logic
+    │   └── utils.ts        # Helper functions
+    ├── pages/              # File-based routes
+    │   ├── api/            # Internal and public endpoints
+    │   │   ├── index.ts
+    │   │   ├── login.ts
+    │   │   ├── register.ts
+    │   │   ├── videos.ts
+    │   │   ├── videos/[id].ts
+    │   │   └── v1/         # Public API (/api/v1)
+    │   │       ├── index.ts
+    │   │       ├── login.ts
+    │   │       ├── register.ts
+    │   │       ├── videos.ts
+    │   │       └── videos/[id].ts
+    │   ├── login.tsx       # Authentication form
+    │   ├── upload.tsx      # Video upload
+    │   ├── videos.tsx      # Video list
+    │   └── video/[id].tsx  # Video details
+    └── types.ts            # Shared TypeScript types
+
+</code></pre>
+<h3 id="contribution-process-git-workflow">Contribution Process (Git Workflow)</h3>
+<p>We use a workflow based on feature branches and Pull Requests (PRs):</p>
+<ol>
+<li><strong>Fork</strong> the FairPlay repository on GitHub.</li>
+<li><strong>Clone</strong> your fork locally.</li>
+<li>Create a new <strong>feature branch</strong> from <code>main</code>: <code>git checkout -b feature/your-feature</code> or <code>bugfix/bug-fix</code>.</li>
+<li><strong>Commit</strong> your changes atomically and with clear messages.</li>
+<li><strong>Push</strong> your branch to your fork: <code>git push origin feature/your-feature</code>.</li>
+<li>Open a <strong>Pull Request (PR)</strong> on the main FairPlay repository. Describe the changes precisely, solved issues, and include screenshots if relevant.</li>
+<li>Respond to comments during the <strong>code review</strong> and make necessary modifications.</li>
+</ol>
+<h3 id="tests">Tests</h3>
+<p>Each new feature or bug fix must be accompanied by relevant tests. We use <strong>Jest</strong> and <strong>React Testing Library</strong> for unit and integration testing of components and functions. To run the tests:</p>
+<pre><code class="language-bash">npm test
+# or
+yarn test
+</code></pre>
+<p>Good code coverage is essential for FairPlay's stability. Make sure all tests pass before submitting a PR.</p>
+<h3 id="api">API</h3>
+<p>You can use our API for free.</p>
+<p>To access the API, you can use the following endpoints:</p>
+<ul>
+<li><code>/api/v1/videos</code> To access every single video in the database, including: Title, link, description, notation...</li>
+<li><code>/api/v1/videos/{id}</code> To access a specific video by its ID, including: Title, link, description, notation...</li>
+<li><code>/api/v1/login</code> To log in to your account, you need to provide your email and password.</li>
+<li><code>/api/v1/register</code> To register a new account, you need to provide your email, password, and pseudo.</li>
+</ul>
+<p>More endpoints are going to be added and improved soon.</p>
+<h2 id="contributions-non-developers">Contributions (Non-Developers)</h2>
+<p>Not a coder? No problem! There are many ways to contribute to FairPlay's success.</p>
+<h3 id="translation">Translation</h3>
+<p>Help us make FairPlay accessible worldwide. We manage text localization via JSON files. If you wish to translate FairPlay into a new language or improve an existing translation, please contact us on Discord for instructions and files to translate.</p>
+<h3 id="writing-and-documentation">Writing and Documentation</h3>
+<p>Good documentation is key to a successful Open Source project. Whether it's to improve our existing guides, create new tutorials, write blog posts, or enrich our technical wiki, your writing talent is welcome. All documentation files are in Markdown and are versioned in the <code>/docs</code> folder of our main repository.</p>
+<h3 id="design-uiux">Design (UI/UX)</h3>
+<p>User experience is paramount. If you have UI/UX design skills, feel free to propose mockups (e.g., on Figma), provide feedback on ergonomics, or suggest visual improvements. We are open to new ideas to make FairPlay even more intuitive and pleasant, while respecting our design principles based on Tailwind CSS.</p>
+<h3 id="moderation">Moderation</h3>
+<p>To maintain a healthy and respectful environment, we rely on volunteer moderators. Their role is to ensure that interactions remain constructive and that content respects our guidelines (no misinformation, politics, or religion). A detailed moderation guide is available for members of our moderation community.</p>
+<h3 id="testing-and-bug-reports">Testing and Bug Reports</h3>
+<p>Even before writing a line of code, testing the application is an invaluable contribution. If you find a bug, please report it via our <a href="https://www.google.com/search?q=https://github.com/NewStreamTeam/NewStream-Website/issues">GitHub issue tracker</a> by following the provided template. Provide as many details as possible (reproduction steps, environment, screenshots) to help us reproduce and fix it.</p>
+<h3 id="promotion-and-communication">Promotion and Communication</h3>
+<p>Spread the word about FairPlay! Share our project on social media, tell your friends, or write an article. Any form of promotion helps FairPlay reach a wider audience and find new contributors. Don't hesitate to contact us if you have ideas for partnerships or events.</p>
+<h2 id="code-of-conduct">Code of Conduct</h2>
+<p>FairPlay is committed to providing a welcoming and inclusive environment for everyone, regardless of experience, gender, sexual orientation, disability, personal appearance, race, ethnicity, religion, or nationality.</p>
+<p>We expect all contributors to show respect, courtesy, and open-mindedness. Harassing, discriminatory, or disrespectful behavior will not be tolerated. Discussions on political and religious topics, as well as the spread of misinformation, are strictly prohibited to maintain an environment focused on relevant and entertaining content.</p>
+<p>If you observe inappropriate behavior, please report it immediately to <a href="mailto:contact.newstreamteam@gmail.com">contact.newstreamteam@gmail.com</a>.</p>
+<h2 id="useful-resources">Useful Resources</h2>
+<p>Here are some essential links to help you on your contribution journey:</p>
+<ul>
+<li><a href="https://github.com/NewStreamTeam/NewStream-Website/">Official GitHub Repositories</a></li>
+<li>API Documentation (Coming Soon)</li>
+<li><a href="https://discord.gg/AZBwM6u9Kr">Join our Community Discord server</a></li>
+<li>FAQ for Contributors</li>
+</ul>
+<h2 id="project-license">Project License</h2>
+<p>FairPlay is an Open Source project distributed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>. This means that the code is free to be used, modified, and distributed, under certain conditions. By contributing to FairPlay, you agree that your contributions are also subject to this license.</p>
+<p>Please refer to the <code>LICENSE.md</code> file in the main repository for full details.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2025-07-08 10:52:15.108988+00:00
+-->
