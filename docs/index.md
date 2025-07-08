@@ -1,5 +1,3 @@
-Here's the content from the `contributors.html` file, converted into Markdown format:
-
 # FairPlay for Developers - Contribution Guide
 
 ## Introduction and Project Philosophy
